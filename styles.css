@@ -1,41 +1,51 @@
 /* Resetea los márgenes por defecto del navegador */
+/* --- RESET GENERAL --- */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Centra todo en la pantalla y le da un fondo suave */
+/* --- 1. ESTRUCTURA DEL BODY --- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f7f6;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-/* Convierte el formulario en una "tarjeta" blanca con sombra */
-form {
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 400px;
+    min-height: 100vh; /* min-height es vital para que no se corte en móviles */
+    /* Quitamos el justify-content y align-items de aquí */
 }
 
 h1 {
-    text-align: centere;
+    text-align: center;
     color: #333;
-    margin-bottom: 30px;
-    font-size: 24px;
-    width:100%;
+    margin-top: 40px; /* Separación desde arriba */
+    font-size: 28px;
 }
 
-/* Estiliza las etiquetas de texto */
+/* --- 2. EL CONTENEDOR (El resorte) --- */
+.contenedor-principal {
+  flex: 1; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  padding: 20px; 
+}
+
+/* --- 3. TU FORMULARIO PERSONALIZADO --- */
+form {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 100%; 
+  max-width: 400px; 
+  
+  /* ESTO ES CLAVE: Apila los inputs y labels uno debajo del otro */
+  display: flex;
+  flex-direction: column;
+}
+
 label {
     margin-bottom: 8px;
     color: #555;
@@ -43,7 +53,6 @@ label {
     font-size: 14px;
 }
 
-/* Diseño de las cajas de texto */
 input {
     padding: 12px;
     margin-bottom: 20px;
@@ -53,14 +62,12 @@ input {
     transition: border-color 0.3s ease;
 }
 
-/* Efecto cuando el usuario hace clic para escribir */
 input:focus {
     border-color: #007bff;
     outline: none;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
 }
 
-/* Diseño del botón */
 button {
     background-color: #007bff;
     color: white;
@@ -74,7 +81,67 @@ button {
     margin-top: 10px;
 }
 
-/* Efecto cuando pasas el mouse sobre el botón */
 button:hover {
     background-color: #0056b3;
+}
+
+/* --- 4. TU FOOTER CLÁSICO (No lo borres) --- */
+.footer-clasico {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 40px 0 20px 0;
+  line-height: 1.6;
+}
+
+.footer-contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.footer-columna {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
+
+.footer-columna h3 {
+  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.footer-columna p, .footer-columna a {
+  color: #bdc3c7;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.footer-columna ul {
+  list-style-type: none;
+}
+
+.footer-columna ul li {
+  margin-bottom: 10px;
+}
+
+.footer-columna a:hover {
+  color: #3498db;
+  text-decoration: underline;
+}
+
+.footer-inferior {
+  background-color: #1a252f;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #95a5a6;
 }
